@@ -69,10 +69,50 @@ public class DataTypes {
         int b1 = 20;
         a1=b1;
 
-        //risque de perte de donénes avec un cast
+        //risque de perte de données avec un cast
         double a2 = 20;
         int b3;
         b3 = (int) a2;
+
+        //char
+        // peut etre un char ou un int - table ASCII -> 0 - 65535
+        char c1 = '5'; //53 dans la table ASCII
+        System.out.println(c1);
+        System.out.println("is a letter ? "+Character.isLetter(c1));
+        System.out.println("is a digit ? "+Character.isDigit(c1));
+
+        char c2 = 'H'; //72 dans la table ASCII
+        System.out.println(c2);
+        System.out.println("is a letter ? "+Character.isLetter(c2));
+        System.out.println("is a digit ? "+Character.isDigit(c2));
+
+        char c3 = 65; //A dans la table ASCII
+        System.out.println(c3);
+        System.out.println("is a letter ? "+Character.isLetter(c3));
+        System.out.println("is a digit ? "+Character.isDigit(c3));
+
+        //on peut faire des operations sur les char vu que ce sont aussi des entiers
+        char letter1 = 67; //C
+        char letter2 = (char) (letter1 + 3);
+        System.out.println("letter 2 is : "+letter2);//F
+
+        //on peut faire des comparaisons
+        char letter3 = 70;//F
+        char letter4 = letter3--;
+        boolean check1 = letter4 == 'E';
+        boolean check2 = letter4 == 69;
+        boolean check3 = letter3 > 'D';
+
+        System.out.println("letter3 : "+letter3);
+        System.out.println("letter4 : "+letter4);
+
+        System.out.println("check1 : "+check1);
+        System.out.println("check2 : "+check2);
+        System.out.println("check3 : "+check3);
+
+
+
+
 
     }
 }
