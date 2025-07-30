@@ -84,7 +84,15 @@ public class Operators {
 
         //les operateurs ont une priorité comme en math
         //dans l'ordre
-        //unary, multiplication, addition, comparaison, egalité, conditionnal and, or, ternary, assignment
+        //unary + - ++ -- !
+        //multiplication */%
+        //addition +-
+        //comparaison < <= > >=
+        //egalité == !=
+        //conditionnal and &&
+        //conditional or ||
+        //ternary ?:
+        //assignment = += -= *= /= %=
 
         int x = 8, y = 4, z = 2, sum =0;
         sum = x + --y + --z;
