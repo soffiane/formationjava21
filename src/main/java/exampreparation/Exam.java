@@ -41,6 +41,103 @@ public class Exam {
      */
 
     public static void main(String[] args) throws IOException, InterruptedException {
+
+        /**
+         * primitive type
+         */
+        byte byt = 127;///entre 127 et -128 les bytes
+        //short shrt = 7.5;//pas de . dans un short
+        String s = "String";
+        //byt.length();//pas de methode length pour un byte
+        s.length();
+        //int i1 = 8L;8L est un long et on peut pas mettre un long dans un int
+        int i2 = 0xAB;//ca rentre en hexa
+        int i3 =0b01110;//ca rentre en binaire
+        double d = 0xF4;//on peut mettre un hexa dans un double
+
+        //The type of variable “flt” may be changed to int, short or byte.
+        //The variable "flt" in line 5 may be cast to int data type.
+        //The variable "flt" in line 5 may be cast to short data type.
+        //The data type of variable lng should be changed to double.
+        float flt = 5;//line 4
+        double lng = 2 * flt;//line 5
+
+        byte byt1 =4;
+        byte byt2 =5;
+        //byte i1 = byt1 * byt2;
+        //short i1 = byt1 * byt2;
+        int i1 = byt1 * byt2;
+        long l1 = byt1 * byt2;
+        double d1 = byt1 * byt2;
+        //boolean bool1 = byt1 * byt2;
+
+        int result = 4+9/3%6*4-2;//4+9/3*4-2 ->4+3*4-2 -> 4+12-2 -> 16-2 =14
+        System.out.println("result = " + result);
+
+        //on somme des char avec un int ca donne un int
+        //donc 97 + 99 + 10 = 206
+        int i = (int) 10; //line 4
+        System.out.print('c' + 'a' + i);//line 5
+
+        //char c1 = '+7';
+        //char c2 = -7;
+        char c3 = '7';
+        //char c4 = '-7';
+        //bit b = 0;
+        //integer i = 3;
+
+        //dans un tableau 2 dimension il faut au moins declarer la premiere dimension
+        int[][] nums = new int[5][];//valid
+        //int[][] nums2 = new int[][5];//invalid
+
+        if (3 >= 0) {
+            if (3 == 0) {
+                System.out.println("first string");
+            } else System.out.println("second string");
+        }
+        System.out.println("third string");
+
+        /**
+         * switch
+         * il faut des constantes dans les ase
+         */
+        int x1 = 5;
+        switch (x1){
+            //default: System.out.print("Good");
+            case 1:System.out.print(" Lucks");
+            //case x++:System.out.println(" Java Developers");break;
+        }
+
+        int A = 65;
+        switch (A) {
+            default:System.out.print("Hello");
+            case 'A':System.out.print(" Java");//trouve A mais passe au suivant car pas de break
+            case 'B':System.out.println(" Developers");break;}
+
+        /**
+         * primitifs
+         * rappel ordre : byte, short,int, long, float, double
+         */
+        //static void display(int i) {System.out.print("1");}
+        //static void display(short s) {System.out.print("2");}
+        //static void display(double d) {System.out.print("3");}
+        //public static void main(String args[]) {
+            //byte b = 1; short s = 2; long l = 3; int i = 3; float f = 1; double d = 2;
+            //display(b);display(s);display(l);display(i);display(f);display(d);}}
+        //produit l'affichage 223133
+        //byte entre dans short, short dans short
+        //long rentre dans double mais pas dans int car int est trop petit, int dans int
+        //float et double rentrent dans double
+
+        final boolean flag = false;
+        /*while (flag)
+            System.out.print("Java");//erreur de runtime Unreachable statement
+        */
+
+        String text = "   Java21 is awesome!  ";
+        String result2 = text.stripIndent().translateEscapes();
+        System.out.println("Length: " + result2.length());//18 donctext sans les espaces
+
         //print(5,2); --> ambigous call parce qu'on a deux methodes qui correspondent a cet appel
         print(5, 2.0);//on appelle la premier methode : OK
 
@@ -96,6 +193,10 @@ public class Exam {
         DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);//short = tout en nombres
         System.out.println(formatter.format(dateTime));//11/05/2017 10:15
 
+        LocalDate date = LocalDate.of(2024, 2, 29);
+        date = date.plusYears(1);
+        System.out.println("date " +date);
+
         /**
          * StringBuilder a besoin d'un new pour etre utilisé
          */
@@ -117,12 +218,12 @@ public class Exam {
          */
         Integer a = 100;
         Integer c = 100;
-        Integer d = 200;
+        Integer d2 = 200;
         Integer e = 200;
         //les valeurs d'int comprises entre -128 et 127 sont mises en cache (Cache Integer)
         //donc a ==  c retourne vrai car on les trouvent en cache mais pas d == e car egal a 200
         System.out.println(a == c);//quand on declare c il va cherche a en cache donc a et c sont bien le meme objet
-        System.out.println(d == e);//false
+        System.out.println(d2 == e);//false
 
         /**
          * List and arrays
@@ -169,7 +270,7 @@ public class Exam {
         List<Integer> list1 = List.of(11,12,13,14);
         //Double db = list1.get(0); On ne peut pas directement assigner un Integer dans un Double, il faut le cast
         double db = list1.get(0);//autounboxxing
-        int i = list1.get(0);
+        int i10 = list1.get(0);
         //short sh = list1.get(0);un Integer wrapper ne peut pas etre directement assigné a un short
         long lg = list1.get(0);
         Double db2 = Double.valueOf(list1.get(0));
@@ -301,5 +402,4 @@ class Tester {
         return p;
     }
 }
-
 
