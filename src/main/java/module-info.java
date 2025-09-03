@@ -1,3 +1,3 @@
 module src.main.java.monmodule {
-    exports controlflow;
+    requires org.junit.jupiter.api;
 }
